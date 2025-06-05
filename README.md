@@ -68,3 +68,31 @@ npm run build
 
 The compiled files will be emitted to the `dist` directory and can be
 published to npm using `npm publish`.
+
+## Theming
+
+The library exposes a set of CSS variables defined in `src/index.css`. Each
+theme provides values for these variables using the `@theme` directive. By
+default the variables are defined on `:root`, but additional blocks such as
+`.dark`, `.brand-a` and `.brand-b` override them.
+
+To apply a theme, add the desired class to the root element of your
+application:
+
+```html
+<body class="brand-a">
+  <div id="root"></div>
+</body>
+```
+
+Consumers can also extend the theme by providing their own class and setting the
+variables they wish to override.
+
+```css
+.my-brand {
+  --color-primary: #ff9900;
+  --color-primary-hover: #cc7a00;
+}
+```
+
+Import your custom CSS after the library styles to take precedence.

@@ -15,3 +15,25 @@ export const Primary: Story = {
     children: 'Button',
   },
 }
+
+export const Dark: Story = {
+  render: (args) => (
+    <div className="dark p-4">
+      <Button {...args} />
+    </div>
+  ),
+  args: {
+    children: 'Button',
+  },
+}
+
+export const BrandA: Story = {
+  render: (args) => (
+    <div className="brand-a p-4">
+      <Button {...args} />
+    </div>
+  ),
+  args: {
+    children: 'Button',
+  },
+}
