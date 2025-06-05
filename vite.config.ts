@@ -1,18 +1,24 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
-import path from 'node:path'
+/// <reference types="node" />
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react-swc";
+import path from "path";
+import { fileURLToPath } from "url";
+import tailwindcss from "@tailwindcss/vite";
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), tailwindcss()],
   build: {
     lib: {
-      entry: path.resolve(__dirname, 'src/index.ts'),
-      name: 'CodexUiLibrary',
+      entry: path.resolve(
+        path.dirname(fileURLToPath(import.meta.url)),
+        "src/index.ts"
+      ),
+      name: "CodexUiLibrary",
       fileName: (format) => `codex-ui-library.${format}.js`,
     },
     rollupOptions: {
-      external: ['react', 'react-dom'],
+      external: ["react", "react-dom"],
     },
   },
-})
+});
