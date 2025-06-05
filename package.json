@@ -1,17 +1,21 @@
 {
   "name": "codex-ui-library",
-  "private": true,
-  "version": "0.0.0",
+  "private": false,
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "clsx": "^2.1.0",
+    "@radix-ui/react-slot": "^1.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
@@ -24,6 +28,17 @@
     "globals": "^16.0.0",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.30.1",
-    "vite": "^6.3.5"
-  }
+    "vite": "^6.3.5",
+    "tailwindcss": "^4.0.0",
+    "postcss": "^8.4.38",
+    "autoprefixer": "^10.4.2",
+    "@storybook/react-vite": "^8.0.0",
+    "@storybook/addon-essentials": "^8.0.0"
+  },
+  "main": "./dist/codex-ui-library.cjs.js",
+  "module": "./dist/codex-ui-library.es.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ]
 }

@@ -1,3 +1,10 @@
+# Codex UI Library
+
+This project provides a React component library built with Vite and TypeScript.
+It comes configured with **Tailwind CSS v4**, **Radix UI** primitives and
+**Storybook** for local development and documentation. Components are built as a
+library so they can be published to npm.
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -52,3 +59,12 @@ export default tseslint.config({
   },
 })
 ```
+
+## Building the library
+
+```bash
+npm run build
+```
+
+The compiled files will be emitted to the `dist` directory and can be
+published to npm using `npm publish`.
